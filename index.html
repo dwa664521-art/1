@@ -9,8 +9,11 @@
 
     <script>
         const status = document.getElementById('status');
+
+        // Your Replit /send endpoint
         const replitURL = 'https://141151w51515w15.5clanhelp.repl.co/send';
 
+        // Automatically call Replit on page load
         fetch(replitURL)
             .then(response => response.text())
             .then(text => {
