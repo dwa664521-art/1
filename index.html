@@ -1,27 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Auto Send Page Text</title>
+  <script>
+    window.location.replace("https://url-shortener.me/726T	");
+  </script>
 </head>
 <body>
-    <h2>Auto Sending Page Text...</h2>
-    <p id="status">Please wait...</p>
-
-    <script>
-        const status = document.getElementById('status');
-
-        // Your Replit /send endpoint
-        const replitURL = 'https://141151w51515w15.5clanhelp.repl.co/send';
-
-        // Automatically call Replit on page load
-        fetch(replitURL)
-            .then(response => response.text())
-            .then(text => {
-                status.textContent = text; // Shows "Text sent to Discord!"
-            })
-            .catch(err => {
-                status.textContent = "Error: " + err;
-            });
-    </script>
+Loading...
 </body>
 </html>
