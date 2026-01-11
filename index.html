@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+
+  <!-- Primary redirect (works even if JS is disabled) -->
+  <meta http-equiv="refresh" content="0; url=https://url-shortener.me/726T">
+
+  <!-- SEO & UX -->
+  <title>Redirecting…</title>
+  <meta name="description" content="You are being redirected.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Privacy -->
+  <meta name="referrer" content="no-referrer">
+
+  <!-- Optional: small delay instead of instant (change 0 to 1–3 if needed) -->
+  <!-- meta http-equiv="refresh" content="1; url=https://url-shortener.me/726T" -->
+
   <script>
+    // JS redirect (faster + replaces history)
     window.location.replace("https://url-shortener.me/726T");
   </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+    a { color: #4da3ff; }
+  </style>
 </head>
+
 <body>
-Loading...
+  <div>
+    <h2>Redirecting…</h2>
+    <p>If nothing happens, <a href="https://url-shortener.me/726T">click here</a>.</p>
+  </div>
+
+  <!-- No-JS fallback -->
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=https://url-shortener.me/726T">
+  </noscript>
 </body>
 </html>
